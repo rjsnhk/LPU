@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>try catch throw</title>
+</head>
+<body>
+  <script>
+    var a=Number(prompt('Enter 1st number'));
+    var b=Number(prompt('Enter 2nd number'));
+    function fun(x,y) {
+      document.write(a+b);
+    }
+    try{
+      if(a&&b)
+          fun(a,b);
+      else
+        throw new Error("input is not given by user");}
+    catch(e){
+      alert(e.message);
+    }
+
+  </script>
+</body>
+</html>

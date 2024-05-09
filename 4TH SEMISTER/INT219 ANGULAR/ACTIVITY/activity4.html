@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>activity 4</h1>
+  <p id="p1">p6Lorem ipsum dolor sit amet consectetur, adipisicing elit. Non, deleniti? Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt non iusto alias laboriosam, quidem magni recusandae deserunt rerum quaerat officiis praesentium, totam, aut perferendis saepe? Quod soluta veniam reiciendis quidem.</p>
+  <p>para 2 </p>
+
+  <p class="intro">p7Hello World!</p>
+        <p class="intro">p8This example demonstrates the <b>getElementsByClassName</b> method.</p>
+  <h1>head2</h1>
+  <p>p3</p>
+  <h1>head3</h1>
+  <p>p4</p>
+  <p>p5</p>
+  <label for="name">Name: </label>
+  <input type="text" id="name" name="name"><br><br>
+  <p>Select Gender</p>
+        <label for="male">Male</label>
+        <input type="radio" id="" name="gender"><br>
+        <label for="female">Female</label>
+        <input type="radio" id="" name="gender"><br>
+        <label for="other">Other</label>
+        <input type="radio" id="" name="gender"><br><br>
+
+        
+</body>
+<script>
+  document.getElementById("p1").innerHTML="it overwrites the paragraph of id p1 and change the background color also";
+  document.getElementById("p1").style.background="red";
+
+
+  const para=document.getElementsByTagName("p");
+  const pcount=para.length;
+  document.write("total para "+pcount+ "</br>");
+
+  
+  const head=document.getElementsByTagName("h1");
+  const hcount=head.length;
+  document.write("total head "+hcount+"<br>");
+
+
+  const clas=document.getElementsByClassName("intro")
+  const clascount=para.length;
+  document.write("total class "+clascount+"<br>");
+
+  
+  const name=document.getElementsByName("gender");
+  const ncount=name.length;
+  document.write( "<br/> total radio buttons " +ncount)
+</script>
+</html>
