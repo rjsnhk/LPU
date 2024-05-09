@@ -1,0 +1,17 @@
+// Function to simulate an asynchronous operation
+function asyncOperation(callback) {
+  // Simulating an API call with a delay of 2 seconds
+  setTimeout(() => {
+    const result = 'Async operation completed';
+    callback(result);
+  }, 7000);
+}
+
+// Callback function to handle the result of the async operation
+function handleResult(result) {
+  console.log(result);
+}
+
+// Calling the async operation with a callback
+asyncOperation(handleResult);
+console.log('Async operation started...');

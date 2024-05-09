@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "express": "file:express",
+    "mongoose": "^8.3.4"
+  }
+}

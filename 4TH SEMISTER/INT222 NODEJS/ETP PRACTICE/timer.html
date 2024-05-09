@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Timer Example</title>
+</head>
+<body>
+  <h1>Timer Example</h1>
+  <p id="timer">0</p>
+  <button id="startBtn">Start</button>
+  <button id="stopBtn">Stop</button>
+
+  <script>
+    let count = 0;
+
+    const timerElement = document.getElementById('timer');
+    const startBtn = document.getElementById('startBtn');
+    const stopBtn = document.getElementById('stopBtn');
+
+    function startTimer() {
+      timerId = setInterval(() => {
+        count++;
+        timerElement.textContent = count;
+      }, 1000);
+
+      // Set a timeout to show an alert after 5 seconds
+      setTimeout(() => {
+        alert('Time to start!');
+      }, 5000);
+    }
+
+    function stopTimer() {
+      clearInterval(timerId);
+    }
+
+    startBtn.addEventListener('click', startTimer);
+    stopBtn.addEventListener('click', stopTimer);
+  </script>
+</body>
+</html>
