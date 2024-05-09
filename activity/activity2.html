@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h2>Form Example</h2>
+    <form id="form" onsubmit="return submitForm()">
+        <label for="name">Name :</label>
+        <input type="text" id="name" name="name"> <br><br>
+        <label for="age">Age :</label>
+        <input type="text" id="age" name="age">
+        <br><br>
+        <!-- <input type="submit" value="submit"> -->
+        <button>Submit</button>
+        
+    </form>
+        <table id="tab1">
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+            </tr>
+        </table>
+        <script>
+            function submitForm(){
+                var name=document.getElementById("name").value;
+                var age=document.getElementById("age").value;
+                var data=[name,age];
+                var table=document.getElementById("tab1");
+                var row=table.insertRow();
+                for(var i=0;i<data.length;i++){
+                    var cell=row.insertCell(i);
+                    cell.innerHTML=data[i];
+                }
+                return false;
+            }
+            
+        </script>
+</body>
+</html>
