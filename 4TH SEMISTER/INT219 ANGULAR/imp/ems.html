@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Employee Management System</title>
+</head>
+<body>
+
+<h1>Employee List</h1>
+<ul id="employeeList"></ul>
+
+<h2>Add Employee</h2>
+<form id="addEmployeeForm">
+  <label for="name">Name:</label>
+  <input type="text" id="name" name="name" required><br>
+  <label for="email">Email:</label>
+  <input type="email" id="email" name="email" required><br>
+  <label for="department">Department:</label>
+  <input type="text" id="department" name="department" required><br>
+  <button type="submit">Add Employee</button>
+</form>
+
+<h2>Update Employee</h2>
+<form id="updateEmployeeForm">
+  <label for="updateIndex">Enter Index:</label>
+  <input type="number" id="updateIndex" name="updateIndex" min="0" required>
+  <button type="submit">Show Details</button>
+</form>
+
+<div id="updateDetails" style="display: none;">
+  <h3>Update Employee Details</h3>
+  <label for="updateName">Name:</label>
+  <input type="text" id="updateName" name="updateName" required><br>
+  <label for="updateEmail">Email:</label>
+  <input type="email" id="updateEmail" name="updateEmail" required><br>
+  <label for="updateDepartment">Department:</label>
+  <input type="text" id="updateDepartment" name="updateDepartment" required><br>
+  <button type="button" id="saveUpdate">Save</button>
+</div>
+
+<script>
+  // Initial employee data
+  var employees = [
+    { name: "John Doe", email: "john.doe@example.com", department: "HR" },
+    { name: "Jane Smith", email: "jane.smith@example.com", department: "IT" }
+  ];
+
+  var employeeListElement = document.getElementById("employeeList");
+  var addEmployeeForm = document.getElementById("addEmployeeForm");
+  var updateEmployeeForm = document.getElementById("updateEmployeeForm");
+  var updateDetailsDiv = document.getElementById("updateDetails");
+
+  // Function to display employees
+  function displayEmployees() {
+    employeeListElement.innerHTML = ""; // Clear previous list
+    employees.forEach(function(employee, index) {
+      var li = document.createElement("li");
+      li.textContent = "Name: " + employee.name + ", Email: " + employee.email + ", Department: " + employee.department;
+      
+      // Add update and remove buttons for each employee
+      var updateButton = document.createElement("button");
+      updateButton.textContent = "Update";
+      updateButton.onclick = function() {
+        showUpdateForm(index); // Show update form for the selected employee
+      };
+      li.appendChild(updateButton);
+
+      var removeButton = document.createElement("button");
+      removeButton.textContent = "Remove";
+      removeButton.onclick = function() {
+        removeEmployee(index); // Remove employee by index when button clicked
+      };
+      li.appendChild(removeButton);
+
+      employeeListElement.appendChild(li);
+    });
+  }
+
+  // Display initial employees
+  displayEmployees();
+
+  // Add employee form submit event
+  addEmployeeForm.addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevent default form submission
+    var newName = document.getElementById("name").value;
+    var newEmail = document.getElementById("email").value;
+    var newDepartment = document.getElementById("department").value;
+
+    // Add new employee to the array
+    employees.push({ name: newName, email: newEmail, department: newDepartment });
+
+    // Update displayed employee list
+    displayEmployees();
+
+    // Clear form fields after submission
+    addEmployeeForm.reset();
+  });
+
+  // Remove employee by index
+  function removeEmployee(index) {
+    if (index >= 0 && index < employees.length) {
+      employees.splice(index, 1); // Remove employee at specified index
+      displayEmployees(); // Update displayed employee list
+    }
+  }
+
+  // Show update form for selected employee
+  function showUpdateForm(index) {
+    if (index >= 0 && index < employees.length) {
+      var employee = employees[index];
+      document.getElementById("updateName").value = employee.name;
+      document.getElementById("updateEmail").value = employee.email;
+      document.getElementById("updateDepartment").value = employee.department;
+      updateDetailsDiv.style.display = "block"; // Show update details form
+      document.getElementById("saveUpdate").onclick = function() {
+        saveUpdatedEmployee(index); // Save updated employee details
+      };
+    }
+  }
+
+  // Save updated employee details
+  function saveUpdatedEmployee(index) {
+    if (index >= 0 && index < employees.length) {
+      var updatedName = document.getElementById("updateName").value;
+      var updatedEmail = document.getElementById("updateEmail").value;
+      var updatedDepartment = document.getElementById("updateDepartment").value;
+
+      // Update employee details
+      employees[index] = {
+        name: updatedName,
+        email: updatedEmail,
+        department: updatedDepartment
+      };
+
+      displayEmployees(); // Update displayed employee list
+      updateDetailsDiv.style.display = "none"; // Hide update details form
+    }
+  }
+
+  // Update employee form submit event
+  updateEmployeeForm.addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevent default form submission
+    var updateIndex = document.getElementById("updateIndex").value;
+    showUpdateForm(parseInt(updateIndex, 10)); // Show update form for specified index
+    updateEmployeeForm.reset(); // Clear form field after submission
+  });
+</script>
+
+</body>
+</html>

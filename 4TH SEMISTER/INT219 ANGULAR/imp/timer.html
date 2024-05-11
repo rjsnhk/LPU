@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Timer</title>
+<style>
+    .container {
+        text-align: center;
+        margin-top: 50px;
+    }
+    #timer {
+        font-size: 24px;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <div id="timer">Counter value is: 0</div>
+    <button id="startBtn">Start</button>
+    <button id="stopBtn">Stop</button>
+</div>
+
+<script>
+    let counter = 0;
+    let intervalId;
+
+    function startTimer() {
+        intervalId = setInterval(function() {
+            if (counter <= 9) {
+                document.getElementById('timer').innerHTML = "Counter value is: " + counter;
+                counter++;
+            } else {
+                stopTimer();
+            }
+        }, 1000);
+    }
+
+    function stopTimer() {
+        clearInterval(intervalId);
+    }
+
+    document.getElementById('startBtn').addEventListener('click', startTimer);
+    document.getElementById('stopBtn').addEventListener('click', stopTimer);
+</script>
+</body>
+</html>

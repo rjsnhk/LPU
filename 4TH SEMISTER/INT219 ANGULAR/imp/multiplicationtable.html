@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Reverse Multiplication Table</title>
+</head>
+<body>
+
+<h1>Reverse Multiplication Table</h1>
+
+<script>
+  function reversetable(num) {
+    console.log(`Multiplication Table for ${num} in Reverse Order:`);
+    for (let i = 10; i >= 1; i--) {
+      console.log(`${num} * ${i} = ${num * i}`);
+    }
+  }
+  const ui = prompt("Enter a num to print its table in reverse order:");
+  const num = parseInt(userInput);
+  
+  if (!isNaN(num)) {
+    reversetable(num);
+  } else {
+    console.log("Invalid input. Please enter a valid num.");
+  }
+  
+</script>
+
+</body>
+</html>
