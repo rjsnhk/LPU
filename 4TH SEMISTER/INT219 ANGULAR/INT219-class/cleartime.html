@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <button onclick="start()">start</button>
+        <button onclick="stop()">stop</button>
+        <p id="demo"></p>
+
+        <script>
+        var i;
+        function start()
+        {
+        i = setInterval(datetime,1000);
+        }
+
+        function datetime()
+        {
+        document.getElementById("demo").innerHTML = new Date();
+        }
+
+        function stop()
+        {
+        clearInterval(i);
+        }
+
+        </script>
+    </body>
+</html>
