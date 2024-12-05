@@ -1,6 +1,8 @@
 <?php
 include('smtp/PHPMailerAutoload.php');
 
+// https://myaccount.google.com/apppasswords //---creat your password
+
 echo smtp_mailer('justrn003@gmail.com','About Khana','Khana khaya ??');
 function smtp_mailer($to,$subject, $msg){
 	$mail = new PHPMailer(); 
@@ -13,7 +15,7 @@ function smtp_mailer($to,$subject, $msg){
 	$mail->CharSet = 'UTF-8';
 	//$mail->SMTPDebug = 2; 
 	$mail->Username = "nahakrajesh3@gmail.com";
-	$mail->Password = "xppp qafu idam satm";
+	$mail->Password = "";
 	$mail->SetFrom("email");
 	$mail->Subject = $subject;
 	$mail->Body =$msg;
