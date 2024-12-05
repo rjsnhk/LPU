@@ -1,0 +1,16 @@
+create table
+
+CREATE TABLE ABC(id int, name varchar(50));
+CREATE TABLE ABC(id int primary key, name varchar(50));
+
+
+
+
+select,insert
+delete, drop, truncate
+orderby, where
+groupby, having
+and,or operator
+like operator
+aggregate,count,avg,min,max,sum,lcase,vcase
+Alter *
