@@ -1,0 +1,23 @@
+
+.app {
+  text-align: center;
+  padding: 20px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.app.light {
+  background-color: white;
+  color: black;
+}
+
+.app.dark {
+  background-color: black;
+  color: white;
+}
+
+
+
+
+.app.dark button:hover {
+  background-color: #555555;
+}

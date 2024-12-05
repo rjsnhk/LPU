@@ -1,0 +1,25 @@
+table {
+  width: 100%;
+  border-collapse: collapse; /* Removes the default spacing between table cells */
+  margin: 20px 0; /* Adds some space above and below the table */
+  font-family: Arial, sans-serif; /* Font style for the table */
+}
+
+th, td {
+  padding: 12px 15px; /* Adds padding inside cells for spacing */
+  text-align: left; /* Aligns text to the left */
+  border: 1px solid #ddd; /* Adds a light border around cells */
+}
+
+th {
+  background-color: #4CAF50; /* Background color for the table header */
+  color: white; /* Text color for the header */
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2; /* Alternating row color for even rows */
+}
+
+tr:hover {
+  background-color: #ddd; /* Highlight color for the row when hovering */
+}

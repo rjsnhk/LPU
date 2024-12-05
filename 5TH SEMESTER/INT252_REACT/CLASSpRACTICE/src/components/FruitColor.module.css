@@ -1,0 +1,21 @@
+.f1{
+  color: aliceblue;
+  width: 100%;
+  background-color: rgb(255, 0, 0);
+}
+.f2{
+  color: aqua;
+  background-color: rgb(140, 127, 255);
+  font-family: 'Courier New', Courier, monospace;
+}
+.f3{
+  color: azure;
+  background-color: black;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.f4{
+  color: black;
+  border-radius: 10px;
+  border: dotted;
+  background-color:wheat;
+}
